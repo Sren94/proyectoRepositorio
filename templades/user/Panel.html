@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Inicio
+{% endblock title %}
+
+
+{% block body%}
+<header>
+    <div class="container-fluid">
+        {% include "includes/headerUser.html" %}
+    </div>
+    <div>
+        <!-- Enlax`ce de Inicio -->
+        
+        <h3>Bienvenido {{user.username}}</h3>
+        <h2>Email: {{user.email}}</h2>
+        <!-- Campo de texto para buscar artículos -->
+    </div>
+    <!-- Enlace de Iniciar Sesión -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'user_app:update' user.id%}" id="user_update">Actualizar Mis Datos</a></li>
+            <li><a href="{% url 'user_app:logout'%}">Cerrar Sesión</a></li>
+            <li><a href="#">Ver mis Articulos</a></li>
+        </ul>
+    </nav>
+</header>
+{% endblock body%}
+    
+    

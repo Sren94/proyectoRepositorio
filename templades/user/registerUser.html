@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Register
+{% endblock title %}
+
+{% block body %}
+{% include "includes/header.html" %}
+<div class="container-fluid mt-5 d-flex justify-content-center ">
+    <div class="row  "> 
+        <div class="col  justify-content-center ">
+            <form method="post">{% csrf_token %}
+                <h2 class="text-info">Crear Un Usuario</h2>
+                {{form.as_p}}
+                <button type="submit" class="btn btn-info">Registrate</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+{% include "includes/footer.html" %}
+{% endblock body %}

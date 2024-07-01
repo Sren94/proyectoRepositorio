@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Buscar Archivos
+{% endblock title %}
+
+{% block body %}
+{% include "includes/header.html" %}
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <header>
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <form class="d-flex" role="search">{% csrf_token %}
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="Search">
+              <button class="btn btn-outline-info" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="col-12">
+      <ul class="list-group list-group-flush">
+
+        {% for a in arch %}
+        <li class="list-group-item">
+          <p>Articulo</p>
+          {{a}}
+        </li>
+        {% endfor %}
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+{% if is_paginated %}
+<nav>
+  <ul class="pagination text-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number}}" aria-label="Page">Antes</a></li>
+
+    {% endif %}
+    {% for i in paginator.page_range %}
+
+
+    {% if i == page_obj.number %}
+
+    <li class="current"><span class="show-for-sr"></span>{{i}}</li>
+    {% else %}
+    <li><a href="?page={{i}}" aria-label="Page">{{i}}</a></li>
+    {% endif %}
+
+
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <li>
+      <a href="?page={{ page_obj.next_page_number }}">Siguiente
+    </li>
+    {% else %}
+
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+{% endblock body %}

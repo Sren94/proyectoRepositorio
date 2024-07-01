@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Index
+{% endblock title %}
+
+{% block body %}
+{% include "includes/header.html" %}
+<div class="container">
+    <div class="container text-justify pt-5">
+        <div class="row">
+          <div class="col">
+            <p class="text-info">Acerca Del Proyecto</p>
+            <p>Este Proyecto esta hecho a fin de encontrar guias, metodos de investigacion, documentos para toda la cominidad tecnologica asi que puedes consultar y crear archivos para apoyar a nuestra comunidad tecnologica</p>
+          </div>
+          <div class="col">
+            <p class="text-info">Trayectoria</p>
+            <p>La constancia de este proyecto es libre para toda la comundad tecnologica</p>
+          </div>
+          <div class="col-12">
+            <p class="text-info">Entrega FInal</p>
+            <p>Establever una pagina web donde se pueda visualizar datos y sobre todo dar guias donde la comunidad tenga problemas sobre la escuela, Encontrar la solucion de un problema o simplemente aprender algo nuevo </p>
+          </div>
+        </div>
+      </div>
+    <div class="container-fluid py-5 position-relative">
+        <p class="col-md-8 fs-4 text-primary-emphasis" >Los grandes conocimientos engendran las grandes dudas.</p>
+        <p class="text-sm-start">Aristóteles (384 AC-322 AC) Filósofo griego.</p>
+    </div>
+</div>
+<div class="container-fluid m-0 p-0 " class="bg-body-tertiary"  class="bg-dark border-bottom border-body" data-bs-theme="dark">
+    {% include "includes/footer.html" %} 
+</div>
+{% endblock body %}

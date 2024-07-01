@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block body %}
+{% include "includes/header.html" %}
+<div class="container-fluid mt-5 d-flex justify-content-center">
+    <div class="row">
+        <div class="col">
+            <form method="post" class="mt-5">{% csrf_token%}
+                <div class="col">
+                    <img src="{% static 'img/login.png' %}" alt="login" style="width: 10rem; height: 9rem; " class="m-auto p-0">
+                </div>
+                <h2 class="text-info">Inicia Sesion</h2>
+                <div class="col">
+                   {{form.as_p}}
+                </div>
+                <button type="submit" class="btn btn-info mt-4">Acceder</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+{% include "includes/footer.html" %}
+{% endblock body %}
